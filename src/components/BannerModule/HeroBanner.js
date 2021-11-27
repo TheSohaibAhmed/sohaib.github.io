@@ -66,7 +66,7 @@ const HeroBanner = ({
           <StaticImage
             className="banner__image"
             imgClassName="banner__image--content"
-            src="../../images/macbook-color.jpg"
+            src="../../images/soh.jpg"
             alt="Banner Image"
             layout="fullWidth"
             placeholder="blurred"
