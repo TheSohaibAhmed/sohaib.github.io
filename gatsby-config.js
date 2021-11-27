@@ -8,14 +8,14 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: "Barcadia",
-    description: "A super-fast site using GatsbyJS",
-    author: "Morgan Baker",
-    twitterUsername: "@dave",
+    title: "Sohaib Ahmed",
+    description: "Sohaib's Portfolio",
+    author: "Sohaib Ahmed",
+    twitterUsername: "@sohaib",
     image: "/yellow-metal-design-decoration.jpg",
-    siteUrl: "https://barcadia.netlify.com",
+    siteUrl: "https://thesohaibahmed.github.io/sohaib.github.io/",
   },
-  /* Your site config here */
+
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://barcadia.netlify.com",
-        sitemap: "https://barcadia.netlify.com/sitemap.xml",
+        host: "https://thesohaibahmed.github.io/sohaib.github.io",
+        sitemap: "https://thesohaibahmed.github.io/sohaib.github.io/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
