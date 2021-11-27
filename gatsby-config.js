@@ -3,9 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: "Sohaib Ahmed",
@@ -15,7 +13,7 @@ module.exports = {
     image: "/yellow-metal-design-decoration.jpg",
     siteUrl: "https://thesohaibahmed.github.io/sohaib.github.io/",
   },
-
+  pathPrefix: "/sohaib.github.io",
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
@@ -45,7 +43,8 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://thesohaibahmed.github.io/sohaib.github.io",
-        sitemap: "https://thesohaibahmed.github.io/sohaib.github.io/sitemap.xml",
+        sitemap:
+          "https://thesohaibahmed.github.io/sohaib.github.io/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
