@@ -15,7 +15,7 @@ const Index = () => {
       <Layout>
         <HeroBanner
           title="Hello there!"
-          subTitle="This one's a bit of a toughie, but I don't have one 'career focus' -- I'm into learning new things well and fast, and bringing some of those seemingly unrelated disciplines together to solve difficult problems."
+          subTitle="Entrepreneur | Educator | Developer | Designer | Mentor | Speaker"
         />
         <BasicTextModule />
         <PerksModule>
