@@ -22,8 +22,9 @@ const BasicTextModule = () => {
           have this notion that it's actually a good thing to sit around :P If
           not that, you might find me cooking, gaming, chatting with people,
           checking-in on others, and maybe trying to find mini-weekly-hobby.
+          <br />
+          <Button text="My Journey" as={Link} to="/products" />
         </p>
-        <Button text="My Journey" as={Link} to="/products" />
       </div>
     </BasicTextModuleStyles>
   )

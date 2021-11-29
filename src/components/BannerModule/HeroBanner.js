@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
+import styled from "styled-components"
 import { Link, navigate } from "gatsby"
 import { BannerModuleStyles } from "./BannerModuleStyles"
 import { StaticImage } from "gatsby-plugin-image"
@@ -7,10 +8,10 @@ import Button from "../Button/Button"
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation"
 import Typed from "typed.js"
 
-const Text = ({ children, delay }) => {
+const Highlight = ({ children, dtypedRefay }) => {
   const [show, setShow] = useState(false)
   const multiline = false
-  const animationDelay = "200"
+  const animationDtypedRefay = "200"
   const animationDuration = 1000
   useEffect(() => {
     setTimeout(() => {
@@ -22,9 +23,35 @@ const Text = ({ children, delay }) => {
       <span>
         <RoughNotation
           type="highlight"
-          color="var(--primary)"
+          color="#ffc400"
           show={show}
           // multiline={multiline}
+          animationDtypedRefay={0}
+          animationDuration={animationDuration}
+        >
+          {children}
+        </RoughNotation>
+      </span>
+    )
+  }
+  return <div>{children}</div>
+}
+const Underline = ({ color, children }) => {
+  const [show, setShow] = useState(false)
+  const animationDelay = "200"
+  const animationDuration = 1000
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true)
+    }, 300)
+  }, [])
+  if (typeof window !== undefined) {
+    return (
+      <span>
+        <RoughNotation
+          type="underline"
+          color="var(--primary)"
+          show={show}
           animationDelay={0}
           animationDuration={animationDuration}
         >
@@ -35,11 +62,43 @@ const Text = ({ children, delay }) => {
   }
   return <div>{children}</div>
 }
-
+const DelaySpan = styled.span`
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+`
+const DelayText = ({ children, delay }) => {
+  const delayRef = useRef(null)
+  useEffect(() => {
+    setTimeout(() => {
+      delayRef.current.style.opacity = 1
+    }, delay)
+  }, [])
+  return typeof window !== undefined ? (
+    <DelaySpan ref={delayRef}>{children}</DelaySpan>
+  ) : (
+    <span>{children}</span>
+  )
+}
+const love = '<i style="color: #ffc400">love</i>'
+const startup = '<span style="color: #ffc400">startup</span>'
+const teach = '<span style="color: #ffc400">teach</span>'
+const code = '<span style="color: #ffc400">code</span>'
+const design = '<span style="color: #ffc400">design</span>'
+const mentor = '<span style="color: #ffc400">mentor</span>'
+const help = '<span style="color: #ffc400">help others</span>'
+const subTitle = [
+  `I ${love} building things and solving problems!`,
+  `I ${love} building things and solving problems! I also run a ${startup}, `,
+  `I ${love} building things and solving problems! I also run a ${startup}, ${teach}, `,
+  `I ${love} building things and solving problems! I also run a  ${startup}, ${teach}, ${code}, `,
+  `I ${love} building things and solving problems! I also run a  ${startup}, ${teach}, ${code}, ${design}, `,
+  `I ${love} building things and solving problems! I also run a  ${startup}, ${teach}, ${code}, ${design}, ${mentor}, `,
+  `I ${love} building things and solving problems! I also run a  ${startup}, ${teach}, ${code}, ${design}, ${mentor}, and ${help}.`,
+]
 const HeroBanner = ({
   children,
   title,
-  subTitle,
+  // subTitle,
   price,
   enquire,
   shouldAnimate,
@@ -47,21 +106,20 @@ const HeroBanner = ({
   function scrollToArea() {
     navigate("#topContent")
   }
-  var typed
+  const typedRef = useRef(null)
+  const buttonRef = useRef(null)
   useEffect(() => {
     var options = {
-      strings: [subTitle],
-      typeSpeed: 75,
-      backSpeed: 0,
-      backDelay: 1000,
+      strings: subTitle,
+      typeSpeed: 45,
       loop: false,
       showCursor: false,
-      fadeOut: true,
+      smartBackspace: true,
       startDelay: 1000,
     }
     setTimeout(() => {
-      typed = new Typed(".typed", options)
-    }, 1000)
+      const typed = new Typed(typedRef.current, options)
+    }, 2000)
   }, [])
   return (
     <>
@@ -92,14 +150,14 @@ const HeroBanner = ({
           <div className="banner__content">
             {title && (
               <h1>
-                <Text delay={0}>{title}</Text>
-                I'm Sohaib
+                <Highlight>{title}</Highlight>{" "}
+                <DelayText delay={2000}>I'm Sohaib</DelayText>
                 <span style={{ color: "var(--primary)" }}>.</span>
               </h1>
             )}
             {subTitle && (
               <h2>
-                <span className="typed">{typed}</span>
+                <span ref={typedRef}></span>
               </h2>
             )}
             {price && (
@@ -108,8 +166,10 @@ const HeroBanner = ({
                 <span style={{ color: "var(--primary)" }}>.</span>
               </h2>
             )}
-            {enquire && <Button text="Enquire Now" as={Link} to="/contact" />}
-            <button onClick={scrollToArea}>
+            {enquire && (
+              <Button Highlight="Enquire Now" as={Link} to="/contact" />
+            )}
+            <button ref={buttonRef} onClick={scrollToArea}>
               <Arrow />
             </button>
           </div>

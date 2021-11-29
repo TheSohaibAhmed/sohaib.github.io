@@ -7,7 +7,14 @@ import BasicTextModule from "../components/BasicTextModule/BasicTextModule"
 import PerksModule from "../components/PerksModule/PerksModule"
 import Perk from "../components/PerksModule/Perk"
 import Features from "../components/Features/Features"
-
+// ;[
+//   "Entrepreneur",
+//   "Entrepreneur | Educator",
+//   "Entrepreneur | Educator | Coder",
+//   "Entrepreneur | Educator | Coder | Designer",
+//   "Entrepreneur | Educator | Coder | Designer | Mentor",
+//   "Entrepreneur | Educator | Coder | Designer | Mentor | Speaker",
+// ]
 const Index = () => {
   return (
     <>
@@ -15,7 +22,15 @@ const Index = () => {
       <Layout>
         <HeroBanner
           title="Hello there!"
-          subTitle="Entrepreneur | Educator | Developer | Designer | Mentor | Speaker"
+          subTitle={[
+            "I <i>love</i> building things and solving problems!",
+            "I <i>love</i> building things and solving problems! I also run a startup, ",
+            "I <i>love</i> building things and solving problems! I also run a startup, teach, ",
+            "I <i>love</i> building things and solving problems! I also run a startup, teach, code, ",
+            "I <i>love</i> building things and solving problems! I also run a startup, teach, code, design, ",
+            "I <i>love</i> building things and solving problems! I also run a startup, teach, code, design, mentor, ",
+            "I <i>love</i> building things and solving problems! I also run a startup, teach, code, design, mentor, and help others.",
+          ]}
         />
         <BasicTextModule />
         <PerksModule>
