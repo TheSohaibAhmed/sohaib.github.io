@@ -8,7 +8,8 @@ import { motion } from "framer-motion"
 
 const GlobalStyle = createGlobalStyle`
 :root {
-  --background: #000;
+  //--background: #e9e9e9;
+  --background: rgb(26,26,26);
   --primary: #ffc400;
   --bannerTitle: 34px;
   --bannerSubTitle: 20px;
@@ -64,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
-}  
+}
 
 
 body {
@@ -76,7 +77,7 @@ body {
     color: #fff;
     overflow-x: hidden;
     font-size: var(--p);
-    
+
   }
 
 h1,
@@ -171,7 +172,7 @@ button.btn {
   .section-padding {
     padding: var(--paddingStd) var(--paddingBorder);
   }
-  
+
   .section-padding--large {
     padding: var(--paddingLarge) var(--paddingBorder);
   }

@@ -140,7 +140,7 @@ const HeroBanner = ({
               transform: "translate(70vw, 25vh)",
               borderRadius: "50%",
               position: "absolute",
-              border: "10px solid rgba(0, 0, 0, 0.3)",
+              // border: "10px solid rgba(0, 0, 0, 0.3)",
               boxSizing: "border-box",
             }}
           />
