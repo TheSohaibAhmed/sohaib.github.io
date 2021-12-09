@@ -30,13 +30,15 @@ const SearchBar = ({ defaultValue, callback }) => {
     console.log(inputRef.current.value)
     setFocus(false)
     setActive(false)
-    callback(inputRef.current.value)
   }
   const handleClick = () => {
     console.log(inputRef.current.value)
     callback(inputRef.current.value)
   }
-
+  const handleChange = i => {
+    callback(i)
+  }
+  // callback(inputRef.current.value)
   return (
     <Wrapper>
       <>
@@ -47,6 +49,7 @@ const SearchBar = ({ defaultValue, callback }) => {
           onFocus={handleFocus}
           onBlur={handleBlur}
           defaultValue={defaultValue}
+          onChange={i => handleChange(i.target.value)}
         />
         <SearchButton
           active={active}

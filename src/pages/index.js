@@ -7,14 +7,7 @@ import BasicTextModule from "../components/BasicTextModule/BasicTextModule"
 import PerksModule from "../components/PerksModule/PerksModule"
 import Perk from "../components/PerksModule/Perk"
 import Features from "../components/Features/Features"
-// ;[
-//   "Entrepreneur",
-//   "Entrepreneur | Educator",
-//   "Entrepreneur | Educator | Coder",
-//   "Entrepreneur | Educator | Coder | Designer",
-//   "Entrepreneur | Educator | Coder | Designer | Mentor",
-//   "Entrepreneur | Educator | Coder | Designer | Mentor | Speaker",
-// ]
+
 const Index = () => {
   return (
     <>

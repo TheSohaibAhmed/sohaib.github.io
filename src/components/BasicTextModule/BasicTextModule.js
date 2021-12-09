@@ -7,7 +7,7 @@ const BasicTextModule = () => {
   return (
     <BasicTextModuleStyles>
       <div className="container">
-        <h2>Who's this guy?</h2>
+        <h2>A bit about me</h2>
         <p>
           Ah! I always struggle to answer this one cz it's a bit of a toughie.
         </p>
